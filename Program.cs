@@ -18,7 +18,8 @@
                 }
             }
 
-            while (true)
+            bool run = true;
+            while (run)
             {
                 string? cmd = Console.ReadLine();
                 if (cmd == null) break;
@@ -30,6 +31,7 @@
                 {
                     case "print": board.Print(); break;
                     case "play": board.Play(args); break;
+                    case "quit": run = false; break;
                     case "botplay": break;
 
                     default: Console.WriteLine("Command '{0}' is unknown.", head); break;

@@ -7,14 +7,17 @@ namespace ToesBot
             return state.GetWinner() != PlayerTypes.None;
         }
 
-        public static int MiniMax(Board state, PlayerTypes botPlayer)
+        public static int EvaluateWin(Board state, PlayerTypes forWho)
         {
-            if (DidSomeoneWin(state))
-            {
-                return (state.GetWinner() == botPlayer) ? 10 : -10;
-            }
+            PlayerTypes winner = state.GetWinner();
 
-            if 
+            if (winner == PlayerTypes.None) return 0;
+
+            return (winner == forWho) ? 1 : -1;
         }
+
+        // public static int MiniMax(Board state) {
+
+        // }
     }
 }
